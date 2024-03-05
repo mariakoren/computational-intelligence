@@ -3,7 +3,6 @@ from sklearn.decomposition import PCA
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Wczytaj dane o irysach
 iris = datasets.load_iris()
 dane_oryginalne = iris.data
 variety = iris.target
