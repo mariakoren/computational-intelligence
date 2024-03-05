@@ -26,7 +26,7 @@ for variety, group in df_minmax.groupby('variety'):
 
 plt.xlabel('Sepal Length')
 plt.ylabel('Sepal Width')
-plt.title('Dane znormalizowane z-core')
+plt.title('Dane znormalizowane minmax')
 plt.legend()
 plt.grid(True)
 plt.show()
