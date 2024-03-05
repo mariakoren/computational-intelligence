@@ -48,7 +48,10 @@ for element in variety1:
         
 #podpunkt B
         
-df = df.applymap(lambda x: None if isinstance(x, (int, float)) and (x > 15 or x < 0) else x)
+# df = df.applymap(lambda x: None if isinstance(x, (int, float)) and (x > 15 or x < 0) else x)
+df = df.apply(lambda row: row.map(lambda x: None if isinstance(x, (int, float)) and (x > 15 or x < 0) else x))
+
+
 
 # print(df.values)
 # print (df.isnull().sum())
@@ -69,4 +72,4 @@ median_petal_width = df['petal.width'].median()
 df['petal.width'] = df['petal.width'].fillna(median_petal_width)
 
 
-print(df.values) # w tym momencie mamy pęłna poprawną baze
+# print(df.values) # w tym momencie mamy pęłna poprawną baze
