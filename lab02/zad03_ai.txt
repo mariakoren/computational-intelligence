@@ -1,0 +1,42 @@
+1) Stwórz wykresy z irysami jako punktami na wykresie, dla dwóch zmiennych: sepal length i sepal width. Klasy irysów oznaczone są w legendzie wykresu. Zrób wykres w trzech wersjach: dane oryginalne, znormalizowane min-max i zeskalowane z-scorem
+
+plik zad03_ai.py
+
+2) Co możesz powiedzieć o min, max, mean, standard deviation dla tych danych?
+
+wygenerowano:
+
+# Oblicz wartości min, max, mean i odchylenie standardowe dla danych oryginalnych
+min_original = np.min(X, axis=0)
+max_original = np.max(X, axis=0)
+mean_original = np.mean(X, axis=0)
+std_original = np.std(X, axis=0)
+
+# Oblicz wartości min, max, mean i odchylenie standardowe dla danych znormalizowanych min-max
+min_minmax = np.min(X_minmax, axis=0)
+max_minmax = np.max(X_minmax, axis=0)
+mean_minmax = np.mean(X_minmax, axis=0)
+std_minmax = np.std(X_minmax, axis=0)
+
+# Oblicz wartości min, max, mean i odchylenie standardowe dla danych zeskalowanych z-score
+min_zscore = np.min(X_zscore, axis=0)
+max_zscore = np.max(X_zscore, axis=0)
+mean_zscore = np.mean(X_zscore, axis=0)
+std_zscore = np.std(X_zscore, axis=0)
+
+print("Oryginalne dane:")
+print("Sepal length - Min:", min_original[0], "Max:", max_original[0], "Mean:", mean_original[0], "Std:", std_original[0])
+print("Sepal width - Min:", min_original[1], "Max:", max_original[1], "Mean:", mean_original[1], "Std:", std_original[1])
+
+print("\nZnormalizowane dane min-max:")
+print("Sepal length - Min:", min_minmax[0], "Max:", max_minmax[0], "Mean:", mean_minmax[0], "Std:", std_minmax[0])
+print("Sepal width - Min:", min_minmax[1], "Max:", max_minmax[1], "Mean:", mean_minmax[1], "Std:", std_minmax[1])
+
+print("\nZeskalowane dane z-score:")
+print("Sepal length - Min:", min_zscore[0], "Max:", max_zscore[0], "Mean:", mean_zscore[0], "Std:", std_zscore[0])
+print("Sepal width - Min:", min_zscore[1], "Max:", max_zscore[1], "Mean:", mean_zscore[1], "Std:", std_zscore[1])
+
+
+3) połącz 2 kody razem
+
+plik zad03_ai2.py
