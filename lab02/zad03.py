@@ -9,6 +9,14 @@ variety = iris.target
 
 
 df = pd.DataFrame(dane_oryginalne, columns=iris.feature_names)
+
+mean = df.mean()
+std_dev = df.std()
+print (f"mean: {mean}, sd: {std_dev}")
+min_vals = df.min()
+max_vals = df.max()
+print(f"min: {min_vals}, max: {max_vals}")
+
 df['variety'] = iris.target_names[variety]
 
 colors = {'setosa': 'red', 'versicolor': 'green', 'virginica': 'blue'}
