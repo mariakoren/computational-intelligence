@@ -13,7 +13,7 @@ df = pd.DataFrame(dane_oryginalne, columns=iris.feature_names)
 
 mean = df.mean()
 std_dev = df.std()
-
+print (f"mean: {mean}, sd: {std_dev}")
 df_zcore = (df - mean) / std_dev
 
 df_zcore['variety'] = iris.target_names[variety]

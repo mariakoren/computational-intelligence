@@ -14,6 +14,7 @@ df = pd.DataFrame(dane_oryginalne, columns=iris.feature_names)
 min_vals = df.min()
 max_vals = df.max()
 
+print(f"min: {min_vals}, max: {max_vals}")
 df_minmax = (df - min_vals) / (max_vals - min_vals)
 
 df_minmax['variety'] = iris.target_names[variety]
