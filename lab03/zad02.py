@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 
-# Wczytaj dane z pliku CSV
 df = pd.read_csv("iris.csv")
 
 # a
