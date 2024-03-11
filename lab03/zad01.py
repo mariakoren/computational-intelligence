@@ -1,11 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from heapq import merge
+
 
 df = pd.read_csv("iris.csv")
 # print(df)
 
-#podzial na zbior testowy (30%) i treningowy (70%), ziarno losowosci = 13
+#podzial na zbior testowy (30%) i treningowy (70%)
 (train_set, test_set) = train_test_split(df.values, train_size=0.7,
 random_state=285803)
 
