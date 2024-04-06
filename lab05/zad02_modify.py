@@ -6,7 +6,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
 from tensorflow.keras.utils import to_categorical
 from sklearn.metrics import confusion_matrix
-from tensorflow.keras.callbacks import History
+from tensorflow.keras.callbacks import History, ModelCheckpoint
 
 # Load dataset
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
@@ -30,9 +30,12 @@ model = Sequential([
 # Compile model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
+# Define ModelCheckpoint callback
+checkpoint = ModelCheckpoint(filepath='best_model.h5', monitor='val_accuracy', save_best_only=True)
+
 # Train model
 history = History()
-model.fit(train_images, train_labels, epochs=5, batch_size=64, validation_split=0.2, callbacks=[history])
+model.fit(train_images, train_labels, epochs=5, batch_size=64, validation_split=0.2, callbacks=[history, checkpoint])
 
 # Evaluate on test set
 test_loss, test_acc = model.evaluate(test_images, test_labels)
@@ -49,7 +52,6 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.title('Confusion Matrix')
-# plt.show()
 plt.savefig('task2_confusionmatrix.png')
 
 # Plotting training and validation accuracy
@@ -72,7 +74,6 @@ plt.grid(True, linestyle='--', color='grey')
 plt.legend()
 
 plt.tight_layout()
-# plt.show()
 plt.savefig("task2_training_validation.png")
 
 # Display 25 images from the test set with their predicted labels
@@ -84,6 +85,4 @@ for i in range(25):
     plt.grid(False)
     plt.imshow(test_images[i].reshape(28,28), cmap=plt.cm.binary)
     plt.xlabel(predicted_labels[i])
-# plt.show()
 plt.savefig("task2_25images.png")
-
