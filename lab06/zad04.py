@@ -94,7 +94,10 @@ plt.grid(True, linestyle="--", color="grey")
 plt.legend()
 
 plt.tight_layout()
-plt.show()
+# plt.show()
+plt.savefig("zad04-plot-loss.png")
+
+
 
 # Predict on test images
 predictions = model.predict(test_images)
@@ -108,4 +111,5 @@ sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("True")
 plt.title("Confusion Matrix")
-plt.show()
+# plt.show()
+plt.savefig("zad04-cm.png")
