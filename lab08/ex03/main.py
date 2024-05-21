@@ -19,7 +19,7 @@ labirynt = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
 
-def fitness_func(ga_instance, solution, solution_idx):
+def fitness_func(model, solution, solution_idx):
     x, y = 1, 1
     fitness = 0
 
