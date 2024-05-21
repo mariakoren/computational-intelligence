@@ -81,14 +81,14 @@ num_iterations = 10
 total_time = 0
 
 
-# for _ in range(num_iterations):
-#     start_time = time.time()
-#     ga_instance.run()
-#     end_time = time.time()
-#     total_time += end_time - start_time
+for _ in range(num_iterations):
+    start_time = time.time()
+    ga_instance.run()
+    end_time = time.time()
+    total_time += end_time - start_time
 
-# average_time = total_time / num_iterations
-# print("Sredni czas:", average_time)  # 1.4391039609909058
+average_time = total_time / num_iterations
+print("Sredni czas:", average_time)  # 1.4391039609909058
 
 
 start_time = time.time()
