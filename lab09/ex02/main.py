@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import random
-
+import time
 from aco import AntColony
 
 
@@ -73,12 +73,16 @@ def plot_all_edges():
 
 
 plot_nodes()
-
-colony = AntColony(COORDS, ant_count=3000, alpha=0.5, 
+start_time = time.time()
+colony = AntColony(COORDS, ant_count=300, alpha=0.5, 
                    beta=1.2, pheromone_evaporation_rate=0.40, 
-                   pheromone_constant=10.0,iterations=30)
+                   pheromone_constant=1000.0,iterations=3000)
 
 optimal_nodes = colony.get_path()
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+print(f"Czas wykonania: {elapsed_time} sekund")
 
 for i in range(len(optimal_nodes) - 1):
     plt.plot(
@@ -87,4 +91,4 @@ for i in range(len(optimal_nodes) - 1):
     )
 
 
-plt.savefig("plot4.png")
+plt.savefig("images/plot5.png")
